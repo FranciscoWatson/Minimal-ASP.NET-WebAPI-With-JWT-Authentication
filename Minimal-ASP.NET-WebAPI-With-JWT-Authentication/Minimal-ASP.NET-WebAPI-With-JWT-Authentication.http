@@ -1,0 +1,6 @@
+@Minimal_ASP.NET_WebAPI_With_JWT_Authentication_HostAddress = http://localhost:5080
+
+GET {{Minimal_ASP.NET_WebAPI_With_JWT_Authentication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
