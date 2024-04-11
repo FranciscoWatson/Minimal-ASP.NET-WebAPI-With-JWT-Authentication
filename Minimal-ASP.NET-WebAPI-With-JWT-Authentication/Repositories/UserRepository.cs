@@ -10,9 +10,9 @@ namespace Minimal_ASP.NET_WebAPI_With_JWT_Authentication.Repositories
             new User { UserId = 2, FirstName = "Jane", LastName = "Doe", Username = "jane.doe", Password = "password" }
         };
 
-        public Task<User> Get(string username, string password)
+        public async Task<User> Get(string username, string password)
         {
-            return Task.FromResult(_users.FirstOrDefault(u => u.Username == username && u.Password == password));
+            return await Task.FromResult(_users.FirstOrDefault(u => u.Username == username && u.Password == password));
         }
     }
 }

@@ -21,9 +21,9 @@ namespace Minimal_ASP.NET_WebAPI_With_JWT_Authentication.Controllers
         }
 
         [HttpPost("authenticate")]
-        public ActionResult<object> Authenticate(AuthenticationRequestBody authenticationRequestBody)
+        public async Task<ActionResult<object>> Authenticate(AuthenticationRequestBody authenticationRequestBody)
         {
-            var user = ValidateUserCredentials(authenticationRequestBody);
+            var user = await ValidateUserCredentials(authenticationRequestBody);
 
             if (user == null)
             {
@@ -48,9 +48,9 @@ namespace Minimal_ASP.NET_WebAPI_With_JWT_Authentication.Controllers
 
         }
 
-        private User ValidateUserCredentials(AuthenticationRequestBody authenticationRequestBody)
+        private async Task<User> ValidateUserCredentials(AuthenticationRequestBody authenticationRequestBody)
         {
-            var user = _userRepository.Get(authenticationRequestBody.Username, authenticationRequestBody.Password).Result;
+            var user = await _userRepository.Get(authenticationRequestBody.Username, authenticationRequestBody.Password);
             if (user == null)
             {
                 return null;
