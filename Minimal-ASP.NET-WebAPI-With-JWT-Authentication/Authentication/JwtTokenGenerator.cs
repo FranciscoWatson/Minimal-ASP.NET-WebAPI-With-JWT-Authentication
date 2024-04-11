@@ -54,7 +54,8 @@ namespace Minimal_ASP.NET_WebAPI_With_JWT_Authentication.Authentication
                 ValidateIssuerSigningKey = true,
                 ValidIssuer = _jwtAuthenticationConfig.Issuer,
                 ValidAudience = _jwtAuthenticationConfig.Audience,
-                IssuerSigningKey = securityKey
+                IssuerSigningKey = securityKey,
+                ClockSkew = TimeSpan.Zero
             };
           
 
