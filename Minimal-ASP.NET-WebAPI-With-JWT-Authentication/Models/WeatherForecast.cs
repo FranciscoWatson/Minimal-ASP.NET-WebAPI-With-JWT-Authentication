@@ -1,4 +1,4 @@
-namespace Minimal_ASP.NET_WebAPI_With_JWT_Authentication
+namespace Minimal_ASP.NET_WebAPI_With_JWT_Authentication.Models
 {
     public class WeatherForecast
     {
