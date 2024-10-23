@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Minimal_ASP.NET_WebAPI_With_JWT_Authentication.Models;
 
 namespace Minimal_ASP.NET_WebAPI_With_JWT_Authentication.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
